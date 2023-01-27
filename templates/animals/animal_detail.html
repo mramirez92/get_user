@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <section>
+    <h2>{{ animal.title }} bio:</h2>
+    <p>Description: {{ animal.description }}</p>
+    <img src="{{animal.image_url}}" alt="{{ animal.title}}">
+        <button type="button" name="submit" onclick="location.href='{% url 'animal_update' animal.pk %}'">Update Animal</button>
+        <button type="button" name="submit" onclick="location.href='{% url 'animal_delete' animal.pk %}'">Delete Animal</button>
+{#    <a href="{% url 'animal_update' animal.pk %}" class="button">+ Update the Animal</a>#}
+{#    <a href="{% url 'animal_delete' animal.pk %}" class="button">+ Delete the Animal</a>#}
+    </section>
+{% endblock content %}
